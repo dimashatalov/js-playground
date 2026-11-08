@@ -1,0 +1,129 @@
+.playground-animation {
+  width: min(100%, 420px);
+  margin-top: 14px;
+}
+
+.playground-animation__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.playground-animation__orbit-track {
+  fill: none;
+  stroke: #dedbea;
+  stroke-dasharray: 2 7;
+  stroke-width: 1.5;
+}
+
+.playground-animation__orbit-track--inner {
+  stroke: #eceaf2;
+  stroke-dasharray: none;
+}
+
+.playground-animation__orbit {
+  transform-box: view-box;
+  transform-origin: center;
+  animation: playground-orbit 24s linear infinite;
+}
+
+.playground-animation__token {
+  transform-box: view-box;
+  transform-origin: center;
+  animation: playground-counter-orbit 24s linear infinite;
+}
+
+.playground-animation__token--code rect {
+  fill: #f7c948;
+}
+
+.playground-animation__token--code text {
+  fill: #252235;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.playground-animation__token--braces circle {
+  fill: #fff;
+  stroke: #8572e8;
+  stroke-width: 2;
+}
+
+.playground-animation__token--braces text {
+  fill: #6856ce;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.playground-animation__orbit-dot {
+  fill: #ff766f;
+}
+
+.playground-animation__core {
+  transform-box: view-box;
+  transform-origin: center;
+  animation: playground-float 4s ease-in-out infinite;
+}
+
+.playground-animation__filename,
+.playground-animation__code,
+.playground-animation__cursor {
+  font-family: var(--mono);
+}
+
+.playground-animation__filename {
+  fill: #aaa7bb;
+  font-size: 8px;
+}
+
+.playground-animation__code {
+  fill: #e6e4ee;
+  font-size: 10px;
+}
+
+.playground-animation__code--highlight {
+  fill: #f7c948;
+}
+
+.playground-animation__code--result,
+.playground-animation__cursor {
+  fill: #67d5a5;
+}
+
+.playground-animation__cursor {
+  animation: playground-blink 1s steps(2, start) infinite;
+}
+
+@keyframes playground-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes playground-counter-orbit {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes playground-float {
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes playground-blink {
+  to {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .playground-animation__orbit,
+  .playground-animation__token,
+  .playground-animation__core,
+  .playground-animation__cursor {
+    animation: none;
+  }
+}

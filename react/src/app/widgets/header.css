@@ -1,0 +1,56 @@
+.header {
+  background: #fff;
+  padding: 20px;
+
+
+}
+
+.logo-container {
+  text-align: left;
+  line-height: 1.5;
+}
+
+.logo {
+  font-size: 46px;
+  text-align: left;
+}
+
+.logo-title {
+  background-color: #e7e7e7;
+  display: inline-block;
+  padding: 8px;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: flex-start;
+  gap: 24px;
+  margin: 16px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header__menu a {
+  color: #0057d9;
+  text-decoration: underline;
+}
+
+.header__menu a:hover,
+.header__menu a:focus-visible {
+  text-decoration: none;
+}
+
+.header__menu a[aria-current='page'] {
+  padding: 2px 6px;
+  border-radius: 2px;
+  background: #39ff14;
+  color: #10180c;
+  text-decoration: none;
+}
+
+
+.playground-animation {
+    position: absolute;
+    right:0;
+    top:0;
+}

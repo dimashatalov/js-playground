@@ -1,19 +1,27 @@
+@font-face {
+  font-family: 'Departure Mono';
+  src: url('./assets/fonts/DepartureMono-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
-  --text: #6b6375;
+  --text: #121213;
   --text-h: #08060d;
   --bg: #fff;
-  --border: #e5e4e7;
+  --border: oklch(0.922 0 0);
   --code-bg: #f4f3ec;
-  --accent: #aa3bff;
+  --accent: oklch(0.97 0 0);
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  --sans: 'Departure Mono', monospace;
+  --heading: 'Departure Mono', monospace;
+  --mono: 'Departure Mono', monospace;
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
@@ -28,6 +36,7 @@
   @media (max-width: 1024px) {
     font-size: 16px;
   }
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -51,15 +60,22 @@
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
-  border-inline: 1px solid var(--border);
+  border-inline: 0px solid var(--border);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  position: relative;
+}
+
+.inner {
+  width: calc(100% - 64px);
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
 }
 
 body {
